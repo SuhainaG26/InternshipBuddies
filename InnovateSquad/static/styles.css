@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fallback background color */
+    background-image: url("https://wallpapercave.com/wp/wp12238896.png"); /* Background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-color: #4300fc;
+    margin: 100px;
+}
+
+.login-container, .register-container {
+    width: 35%; /* Adjust the width as needed */
+    height: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 20px; /* Rounded corners for a modern look */
+    background-color: transparent;
+}
+
+.logo {
+    width: 100px; /* Adjust the width of the logo as needed */
+    margin-bottom: 10px; /* Space below the logo */
+   
+
+}
+img{
+  border-radius: 80px;
+}
+h2 {
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+}
+
+input, button {
+    width: 100%;
+    height: 40px;
+    padding-right:0px;
+    padding-left: 10px;
+    margin: 10px 0;
+    border: 1px solid #7a4ef4; /* Add border to input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
+    
+}
+
+button {
+    background-color: #007bff; /* Button color */
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    border: none;
+    width: 102.5%;
+    height: 40px;
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Rounded corners for list items */
+}
+.recommendation-container{
+    width: 100%; /* Adjust the width as needed */
+    height: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(227, 214, 214, 0.9); /* Slightly transparent white background */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 20px; /* Rounded corners for a modern look */
+    background-color: transparent;
+}
+.recommendation-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border-radius: 20px;
+}
+
+.recommendation-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Space between items */
+}
+
+.recommendation-item {
+    flex: 1 1 calc(33.333% - 20px); /* Three items per row with space */
+    background: #ffecec;
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-item h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .recommendation-item {
+        flex: 1 1 calc(50% - 20px); /* Two items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .recommendation-item {
+        flex: 1 1 100%; /* One item per row on very small screens */
+    }
+}

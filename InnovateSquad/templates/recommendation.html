@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recommendations - Internship Recommendation</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <style>
+      a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 1rem;
+        font-size: 20px;
+        margin-top: 60px;
+      }
+
+      a:hover {
+        color: #ff0000;
+      }
+
+      header {
+        position: relative;
+        padding: 0 2rem;
+        background-color: #fffefe;
+        height: 100px;
+        border-radius: 20px;
+        background-image: url("https://wallpapers.com/images/hd/1080p-nature-background-hw4l1dz8bw6jj4sw.jpg");
+      }
+
+      .navbar {
+        width: 100%;
+        height: 40px;
+        max-width: 1200px;
+        margin-top: -70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar .logo a {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .navbar .nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .navbar .menu {
+        color: #000000;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+      }
+
+      .navbar .highlight {
+        display: block;
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+
+      .highlight {
+        background-color: rgb(0, 0, 0);
+        color: #000000;
+        padding: 0.5rem 1rem;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: scale 0.2s ease;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .highlight:hover {
+        transform: scale(1.05);
+        color: #000;
+      }
+
+      .highlight:active {
+        transform: scale(0.95);
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        background-color: transparent;
+      }
+
+      @media (max-width: 992px) {
+        .navbar .nav {
+          display: none;
+        }
+
+        .navbar .menu {
+          display: flex;
+        }
+
+        .navbar .menu i {
+          display: inline-block;
+        }
+
+        .navbar .highlight {
+          display: none;
+        }
+
+        .dropdown-menu {
+          display: block;
+        }
+
+        .dropdown-menu .highlight {
+          display: block;
+          margin-top: 1rem;
+        }
+      }
+
+      b.xyz {
+        background: #51bbf0;
+        border-radius: 20px;
+        padding: 20px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="./"><b class="xyz">Internship Buddies</b></a>
+     
+        <div class="nav">
+          <a href="./"><b>HOME 👈</b></a>
+        </div>
+          <div class="menu"><i class="fa-solid fa-bars"></i></div>
+        </div>
+      </div>
+    </header>
+    <br /><br />
+    <div class="recommendation-container">
+      <h2>Internship Recommendations</h2>
+      <div class="recommendation-grid">
+        {% if internships.empty %}
+        <p>
+          No internship recommendations found. Please refine your search or try
+          again later.
+        </p>
+        {% else %} {% for index, row in internships.iterrows() %}
+        <div class="recommendation-item">
+          <h3>{{ row['Profile'] }} at {{ row['Company'] }}</h3>
+          <p>Location: {{ row['Location'] }}</p>
+          <p>
+            Start Date: {{ row['Start Date'] if row['Start Date'] != 'Not
+            specified' else 'Not specified' }}
+          </p>
+          <p>
+            Duration: {{ row['Duration'] if row['Duration'] != 'Not specified'
+            else 'Not specified' }}
+          </p>
+          <p>Stipend: {{ row['Stipend'] }}</p>
+          <p>
+            Skills Required: {{ row['Skills Required'] if row['Skills Required']
+            != 'Not specified' else 'Not specified' }}
+          </p>
+        </div>
+        {% endfor %} {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
